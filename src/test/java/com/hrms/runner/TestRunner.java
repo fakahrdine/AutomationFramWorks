@@ -11,9 +11,10 @@ import io.cucumber.junit.CucumberOptions;
 
 		glue = "com.hrms.steps",
 
-		dryRun = false, monochrome = true, tags = {"@inProgress"}
+		dryRun = false, monochrome = true, tags = { "@temp" }
 
 )
+
 
 public class TestRunner {
 

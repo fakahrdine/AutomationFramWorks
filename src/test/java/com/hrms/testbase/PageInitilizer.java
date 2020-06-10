@@ -4,6 +4,7 @@ import com.hrms.pages.AddEmployePageObjects;
 import com.hrms.pages.EmpPersonnaldetails;
 import com.hrms.pages.EmployeeListPage;
 import com.hrms.pages.HrmDashBaordElements;
+import com.hrms.pages.LandingPageElement;
 import com.hrms.pages.LoginPageObjects;
 import com.hrms.pages.PersonalDetailspage;
 
@@ -18,6 +19,8 @@ public class PageInitilizer extends BaseClass {
 
 	public static EmployeeListPage empList;
 
+	public static LandingPageElement landingP;
+
 	public static void initialize() {
 
 		addEmp = new AddEmployePageObjects();
@@ -26,6 +29,8 @@ public class PageInitilizer extends BaseClass {
 		EmpPd = new EmpPersonnaldetails();
 		empList = new EmployeeListPage();
 		pdetails = new PersonalDetailspage();
+
+		landingP = new LandingPageElement();
 
 	}
 
