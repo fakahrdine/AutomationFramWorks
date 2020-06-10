@@ -3,6 +3,10 @@ package com.hrms.utils;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -41,8 +45,8 @@ public class ExecelUtility {
 
 	}
 
-	public static int cellCount() {
-		return sheet.getRow(0).getLastCellNum();
+	public static int cellCount(int rowN) {
+		return sheet.getRow(rowN).getLastCellNum();
 	}
 
 	public static String getCellData(int rowIndex, int cellIndex) {
@@ -59,7 +63,7 @@ public class ExecelUtility {
 	public static Object[][] exelIntoArray(String filePath, String sheetName) {
 		openExcel(filePath, sheetName);
 		int rows = rowCount();
-		int cols = cellCount();
+		int cols = cellCount(0);
 
 		Object[][] data = new Object[rows - 1][cols];
 		for (int r = 1; r < rows; r++) {
@@ -70,6 +74,37 @@ public class ExecelUtility {
 
 		}
 		return data;
+
+	}
+
+	/**
+	 * this method will grap the data from excel file and transfer it into a List of
+	 * Maps
+	 * 
+	 * @param filepth
+	 * @param sheetName
+	 * @return List of Maps
+	 */
+
+	public static List<Map<String, String>> excelToLisOfMaps(String filepth, String sheetName) {
+
+		openExcel(filepth, sheetName);
+
+		List<Map<String, String>> excelList = new ArrayList<Map<String, String>>();
+		Map<String, String> excelmap;
+
+		for (int r = 1; r < rowCount(); r++) {
+			excelmap = new LinkedHashMap<>();
+			for (int c = 0; c < cellCount(r); c++) {
+
+				excelmap.put(getCellData(0, c), getCellData(r, c));
+
+			}
+
+			excelList.add(excelmap);
+
+		}
+		return excelList;
 
 	}
 

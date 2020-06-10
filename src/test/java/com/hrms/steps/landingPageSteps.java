@@ -31,12 +31,12 @@ public class landingPageSteps extends CommonFunctions {
 		System.out.println(acctualMenuList);
 		System.out.println(expectedMenuList);
 
-		//Assert.assertEquals("THE TWO LISTS ARE NOT MATCHED", expectedMenuList, acctualMenuList);
-		
-		SoftAssertions softAssert = new SoftAssertions();
-		softAssert.assertThat(acctualMenuList).isEqualTo(expectedMenuList);
-		softAssert.assertAll();
-		
+		Assert.assertEquals("THE TWO LISTS ARE NOT MATCHED", expectedMenuList, acctualMenuList);
+//		
+//		SoftAssertions softAssert = new SoftAssertions();
+//		softAssert.assertThat(acctualMenuList).isEqualTo(expectedMenuList);
+//		softAssert.assertAll();
+//		
 
 	}
 
