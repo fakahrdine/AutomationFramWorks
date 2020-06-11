@@ -1,14 +1,16 @@
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\utils\ConfigsReader.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\pages\HrmDashBaordElements.java
+C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\pages\LandingPageElement.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\pages\PersonalDetailspage.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\pages\ReportPageObject.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\utils\Constants.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\utils\CommonFunctions.java
+C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\steps\landingPageSteps.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\utils\ExecelUtility.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\testbase\PageInitilizer.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\pages\EmployeeListPage.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\pages\EmpPersonnaldetails.java
-C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\runner\TestRunner.java
+C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\runner\SmokeRunner.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\testbase\BaseClass.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\steps\LoginSteps.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\pages\AddEmployePageObjects.java
@@ -16,3 +18,4 @@ C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\steps\Hoo
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\steps\AddEmployeeSteps.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\steps\EmployeeSearchSteps.java
 C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\pages\LoginPageObjects.java
+C:\Users\Mohamed\eclipse-workspace\HRMSCUCEMBER\src\test\java\com\hrms\runner\RegressionRunner.java
