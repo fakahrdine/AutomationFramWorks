@@ -2,8 +2,11 @@ package com.hrms.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -286,17 +289,20 @@ public class CommonFunctions extends PageInitilizer {
 	 * @param fileName + file extentions:png/jpg
 	 */
 
-	public static void takeScreenShot(String fileName) {
+	public static byte[] takeScreenShot(String fileName) {
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
-		File screenShotcopy = ts.getScreenshotAs(OutputType.FILE);
+		byte[] picBytes = ts.getScreenshotAs(OutputType.BYTES);
+		File file = ts.getScreenshotAs(OutputType.FILE);
+		String destinationFile = Constants.SCREENSHOT_FILEPATH + fileName + getTimeStemp() + ".png";
 
 		try {
-			FileUtils.copyFile(screenShotcopy, new File("target\\screenShots\\" + fileName+".png"));
+			FileUtils.copyFile(file, new File(destinationFile));
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
+		return picBytes;
 
 	}
 
@@ -372,6 +378,7 @@ public class CommonFunctions extends PageInitilizer {
 
 	/**
 	 * this method will select a date from a calendar
+	 * 
 	 * @param element
 	 * @param date
 	 */
@@ -388,6 +395,12 @@ public class CommonFunctions extends PageInitilizer {
 
 		}
 
+	}
+
+	public static String getTimeStemp() {
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+		return sdf.format(date.getTime());
 	}
 
 }

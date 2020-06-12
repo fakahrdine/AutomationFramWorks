@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2446000000,
+              "duration": 3559000000,
               "status": "passed"
             },
             "line": 22,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 3733000000,
+              "duration": 3384000000,
               "status": "passed"
             },
             "line": 23,
@@ -36,11 +36,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-11T02:02:15.831Z",
+        "start_timestamp": "2020-06-11T23:20:34.833Z",
         "before": [
           {
             "result": {
-              "duration": 9629000000,
+              "duration": 7765000000,
               "status": "passed"
             },
             "match": {
@@ -55,7 +55,7 @@
         "after": [
           {
             "result": {
-              "duration": 760000000,
+              "duration": 627000000,
               "status": "passed"
             },
             "match": {
@@ -68,8 +68,9 @@
         "steps": [
           {
             "result": {
-              "duration": 211000000,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@id\u003d\u0027firstName\u0027]\"}\n  (Session info: chrome\u003d83.0.4103.97)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027LAPTOP-J49C07QH\u0027, ip: \u0027172.20.10.7\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_251\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\\Users\\Mohamed\\AppData\\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61019}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 183ff46daf343ae3c1f3a929e139573f\n*** Element info: {Using\u003dxpath, value\u003d//input[@id\u003d\u0027firstName\u0027]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy17.clear(Unknown Source)\r\n\tat com.hrms.utils.CommonFunctions.sendText(CommonFunctions.java:33)\r\n\tat com.hrms.steps.AddEmployeeSteps.user_enters_employees_first_name_and_last_name(AddEmployeeSteps.java:27)\r\n\tat ✽.user enters employees first \"Redonne\" and last \"Omiirre\"(file:///C:/Users/Mohamed/eclipse-workspace/HRMSCUCEMBER/src/test/resources/features/addEmployee.feature:27)\r\n",
+              "duration": 15066000000,
+              "status": "failed"
             },
             "line": 27,
             "name": "user enters employees first \"Redonne\" and last \"Omiirre\"",
@@ -90,8 +91,7 @@
           },
           {
             "result": {
-              "duration": 2171000000,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 28,
             "name": "user clicks save button",
@@ -102,8 +102,8 @@
           },
           {
             "result": {
-              "duration": 3069000000,
-              "status": "passed"
+              "duration": 1000000,
+              "status": "skipped"
             },
             "line": 29,
             "name": "employee is added successfully",
@@ -131,11 +131,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-06-11T02:02:37.925Z",
+        "start_timestamp": "2020-06-11T23:21:05.323Z",
         "before": [
           {
             "result": {
-              "duration": 6914000000,
+              "duration": 8083000000,
               "status": "passed"
             },
             "match": {
@@ -150,7 +150,7 @@
         "after": [
           {
             "result": {
-              "duration": 620000000,
+              "duration": 607000000,
               "status": "passed"
             },
             "match": {
@@ -163,7 +163,7 @@
         "steps": [
           {
             "result": {
-              "duration": 203000000,
+              "duration": 223000000,
               "status": "passed"
             },
             "line": 5,
@@ -185,7 +185,7 @@
           },
           {
             "result": {
-              "duration": 1903000000,
+              "duration": 3928000000,
               "status": "passed"
             },
             "line": 6,
@@ -197,7 +197,7 @@
           },
           {
             "result": {
-              "duration": 27000000,
+              "duration": 29000000,
               "status": "passed"
             },
             "line": 7,
@@ -215,11 +215,11 @@
         ]
       },
       {
-        "start_timestamp": "2020-06-11T02:02:47.602Z",
+        "start_timestamp": "2020-06-11T23:21:18.213Z",
         "before": [
           {
             "result": {
-              "duration": 9652000000,
+              "duration": 8009000000,
               "status": "passed"
             },
             "match": {
@@ -234,7 +234,7 @@
         "after": [
           {
             "result": {
-              "duration": 627000000,
+              "duration": 612000000,
               "status": "passed"
             },
             "match": {
@@ -247,7 +247,7 @@
         "steps": [
           {
             "result": {
-              "duration": 209000000,
+              "duration": 210000000,
               "status": "passed"
             },
             "line": 11,
@@ -269,7 +269,7 @@
           },
           {
             "result": {
-              "duration": 2204000000,
+              "duration": 2125000000,
               "status": "passed"
             },
             "line": 12,
@@ -281,7 +281,7 @@
           },
           {
             "result": {
-              "duration": 26000000,
+              "duration": 27000000,
               "status": "passed"
             },
             "line": 13,
@@ -290,6 +290,155 @@
               "location": "com.hrms.steps.LoginSteps.ess_user_is_successfully_logged_in()"
             },
             "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-11T23:21:29.209Z",
+        "before": [
+          {
+            "result": {
+              "duration": 6884000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.hrms.steps.Hooks.start()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Login with invalid credentials",
+        "description": "",
+        "id": "hrms-login;login-with-invalid-credentials",
+        "after": [
+          {
+            "result": {
+              "duration": 604000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.hrms.steps.Hooks.end()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.assertj.core.api.SoftAssertionError: \r\nThe following 4 assertions failed:\r\n1) expected:\u003c\"Invalid [C]redentials\"\u003e but was:\u003c\"Invalid [c]redentials\"\u003e\r\n2) expected:\u003c\"Invalid [C]redentials\"\u003e but was:\u003c\"Invalid [c]redentials\"\u003e\r\n3) expected:\u003c\"Invalid [C]redentials\"\u003e but was:\u003c\"Invalid [c]redentials\"\u003e\r\n4) expected:\u003c\"Invalid [C]redentials\"\u003e but was:\u003c\"Invalid [c]redentials\"\u003e\r\n\r\n\tat org.assertj.core.error.AssertionErrorCreator.multipleSoftAssertionsError(AssertionErrorCreator.java:75)\r\n\tat org.assertj.core.api.AbstractSoftAssertions.assertAll(AbstractSoftAssertions.java:37)\r\n\tat com.hrms.steps.LoginSteps.i_enter_invalid_username_and_password_and_see_error_message(LoginSteps.java:76)\r\n\tat ✽.I enter invalid username and password and see error message(file:///C:/Users/Mohamed/eclipse-workspace/HRMSCUCEMBER/src/test/resources/features/hrmsLogin.feature:17)\r\n",
+              "duration": 17333000000,
+              "status": "failed"
+            },
+            "line": 17,
+            "name": "I enter invalid username and password and see error message",
+            "match": {
+              "location": "com.hrms.steps.LoginSteps.i_enter_invalid_username_and_password_and_see_error_message(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "userName",
+                  "passWord",
+                  "errorMessage"
+                ]
+              },
+              {
+                "cells": [
+                  "hello",
+                  "Syntax",
+                  "Invalid Credentials"
+                ]
+              },
+              {
+                "cells": [
+                  "BMW",
+                  "591788MM",
+                  "Invalid Credentials"
+                ]
+              },
+              {
+                "cells": [
+                  "Roma14",
+                  "janawa77",
+                  "Invalid Credentials"
+                ]
+              },
+              {
+                "cells": [
+                  "google45",
+                  "8976llk",
+                  "Invalid Credentials"
+                ]
+              }
+            ],
+            "keyword": "When "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-06-11T23:21:54.036Z",
+        "before": [
+          {
+            "result": {
+              "duration": 6582000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.hrms.steps.Hooks.start()"
+            }
+          }
+        ],
+        "line": 25,
+        "name": "login with invalid credentials from excels",
+        "description": "",
+        "id": "hrms-login;login-with-invalid-credentials-from-excels",
+        "after": [
+          {
+            "result": {
+              "duration": 873000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.hrms.steps.Hooks.end()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.assertj.core.api.SoftAssertionError: \r\nThe following assertion failed:\r\n1) expected:\u003c\"Invalid [C]redentials\"\u003e but was:\u003c\"Invalid [c]redentials\"\u003e\r\n\r\n\tat org.assertj.core.error.AssertionErrorCreator.multipleSoftAssertionsError(AssertionErrorCreator.java:75)\r\n\tat org.assertj.core.api.AbstractSoftAssertions.assertAll(AbstractSoftAssertions.java:37)\r\n\tat com.hrms.steps.LoginSteps.user_Login_with_invalid_credentials_from_excel_excelsheet_then_user_see_the_erro_msg(LoginSteps.java:98)\r\n\tat ✽.user Login with invalid credentials from excel \"negativelogindata\" excelsheet then user see \"Invalid Credentials\"(file:///C:/Users/Mohamed/eclipse-workspace/HRMSCUCEMBER/src/test/resources/features/hrmsLogin.feature:26)\r\n",
+              "duration": 1133000000,
+              "status": "failed"
+            },
+            "line": 26,
+            "name": "user Login with invalid credentials from excel \"negativelogindata\" excelsheet then user see \"Invalid Credentials\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"negativelogindata\"",
+                  "offset": 47
+                },
+                {
+                  "val": "\"Invalid Credentials\"",
+                  "offset": 92
+                }
+              ],
+              "location": "com.hrms.steps.LoginSteps.user_Login_with_invalid_credentials_from_excel_excelsheet_then_user_see_the_erro_msg(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
           }
         ],
         "tags": [

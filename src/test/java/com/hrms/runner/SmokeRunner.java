@@ -11,13 +11,13 @@ import io.cucumber.junit.CucumberOptions;
 
 		glue = "com.hrms.steps",
 
+		
 		dryRun = false, monochrome = true, tags = {"@smoke"}
    
   ,plugin = {
 		"pretty",
-		 "html:target//cucumber-default-report",
-		  "json:target//cucumber.json"
-		  
+		"html:target//cucumber-default-report",
+		"json:target//cucumber.json"  
   }
 
 )

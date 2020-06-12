@@ -12,8 +12,7 @@ Feature: hrms login
     And user click on login button
     Then ess user is successfully logged in
 
- 
-  @inProgress
+  @smoke
   Scenario: Login with invalid credentials
     When I enter invalid username and password and see error message
       | userName | passWord | errorMessage        |
@@ -21,3 +20,13 @@ Feature: hrms login
       | BMW      | 591788MM | Invalid Credentials |
       | Roma14   | janawa77 | Invalid Credentials |
       | google45 | 8976llk  | Invalid Credentials |
+
+  @smoke
+  Scenario: login with invalid credentials from excels
+  When  user Login with invalid credentials from excel "negativelogindata" excelsheet then user see "Invalid Credentials"
+  
+    
+    
+    
+    
+    

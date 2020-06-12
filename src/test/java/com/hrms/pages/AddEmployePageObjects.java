@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.google.errorprone.annotations.FormatMethod;
 import com.hrms.testbase.BaseClass;
 import com.hrms.utils.CommonFunctions;
 
@@ -22,7 +21,7 @@ public class AddEmployePageObjects extends CommonFunctions {
 	public WebElement empIdlabel;
 	@FindBy(xpath = "//label[text()='Photograph']")
 	public WebElement photoGrapthLabel;
-	@FindBy(css = "input#firstName")
+	@FindBy(xpath = "//input[@id='firstName']")
 	public WebElement firstNText;
 	@FindBy(css = "input#lastName")
 	public WebElement lastNText;

@@ -6,6 +6,8 @@ import java.util.Map;
 import org.junit.Assert;
 
 import com.hrms.utils.CommonFunctions;
+import com.hrms.utils.Constants;
+import com.hrms.utils.ExecelUtility;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -66,12 +68,38 @@ public class LoginSteps extends CommonFunctions {
 			// boolean errorMsgisPresent = login.invalidCredentialsErrorMsg.isDisplayed();
 
 			softAssert.assertThat(login.invalidCredentialsErrorMsg.getText()).isEqualTo(Maps.get("errorMessage"));
-			takeScreenShot(username);
+			// takeScreenShot(username);
 			// Assert.assertTrue("error message didnt displayed or is wrong msg",
 			// errorMsgisPresent);
 
 		}
 		softAssert.assertAll();
+
+	}
+
+	@When("user Login with invalid credentials from excel {string} excelsheet then user see {string}")
+	public void user_Login_with_invalid_credentials_from_excel_excelsheet_then_user_see_the_erro_msg(String sheetName,
+			String errorMsg) {
+		SoftAssertions softAsser = new SoftAssertions();
+		List<Map<String, String>> exelListMaps = ExecelUtility.excelToLisOfMaps(Constants.EXCEL_FILE_PATH, sheetName);
+		for (Map<String, String> credentialsmaps : exelListMaps) {
+
+			sendText(login.userName, credentialsmaps.get("UserNames"));
+			sendText(login.passWord, credentialsmaps.get("passwords"));
+			click(login.loginBtn);
+
+			String accualInvalidCredentialMsg = login.invalidCredentialsErrorMsg.getText();
+
+			String expectedInvalidCredentialMsg = errorMsg;
+
+			softAsser.assertThat(accualInvalidCredentialMsg).isEqualTo(expectedInvalidCredentialMsg,
+					"the error msg are not matched");
+
+			softAsser.assertAll();
+
+		}
+
+		softAsser.assertAll();
 
 	}
 
