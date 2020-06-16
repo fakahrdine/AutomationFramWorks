@@ -18,7 +18,7 @@
 #Sample Feature Definition Template
 Feature: landing page user interface
 
-   @temp
+   @Regression
   Scenario: User should see the main menu taps
     When user enter valid admin "Admin" and "Hum@nhrm123"
     And user click on login button

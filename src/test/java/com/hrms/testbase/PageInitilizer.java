@@ -1,7 +1,7 @@
 package com.hrms.testbase;
 
 import com.hrms.pages.AddEmployePageObjects;
-import com.hrms.pages.EmpPersonnaldetails;
+
 import com.hrms.pages.EmployeeListPage;
 import com.hrms.pages.HrmDashBaordElements;
 import com.hrms.pages.LandingPageElement;
@@ -14,7 +14,7 @@ public class PageInitilizer extends BaseClass {
 	public static AddEmployePageObjects addEmp;
 	public static LoginPageObjects login;
 	public static HrmDashBaordElements dash;
-	public static EmpPersonnaldetails EmpPd;
+	public static PersonalDetailspage EmpPd;
 	public static PersonalDetailspage pdetails;
 
 	public static EmployeeListPage empList;
@@ -26,7 +26,7 @@ public class PageInitilizer extends BaseClass {
 		addEmp = new AddEmployePageObjects();
 		login = new LoginPageObjects();
 		dash = new HrmDashBaordElements();
-		EmpPd = new EmpPersonnaldetails();
+		EmpPd = new PersonalDetailspage();
 		empList = new EmployeeListPage();
 		pdetails = new PersonalDetailspage();
 

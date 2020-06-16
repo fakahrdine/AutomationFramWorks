@@ -28,14 +28,14 @@ Feature: Hrms add emplyee functionality
     And user clicks save button
     Then employee is added successfully
 
-  @regression
+  @Regression
   Scenario: add employee without id
     When user enters employees first "Rahmaa" and last "Morrocoo"
     And user deletes employee id
     And user clicks save button
     Then employee is added successfully
 
-  @regression
+  @Regression
   Scenario: Add Employee and create Login Credentials
     When user enters employees first "Fernando" and last "Alberta"
     And user clicks on create login checkbox
@@ -43,7 +43,7 @@ Feature: Hrms add emplyee functionality
     And user clicks save button
     Then employee is added successfully
 
-  @regression
+  @Regression
   Scenario Outline: add multiple new employees
     When user enters employees first "<firstName>" and last "<MiddlName>" and "<LastName>"
     And user clicks save button
@@ -55,11 +55,3 @@ Feature: Hrms add emplyee functionality
       | Hamid     | oghlu     | karazan  |
       | Ahmed     | anwar     | Mohamed  |
       | chakir    | bro       | fakar    |
-
-  
-    
-    
-    
-    
-    
-    

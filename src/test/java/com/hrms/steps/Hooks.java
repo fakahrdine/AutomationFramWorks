@@ -1,7 +1,5 @@
 package com.hrms.steps;
 
-import org.openqa.selenium.interactions.SendKeysAction;
-
 import com.hrms.testbase.BaseClass;
 import com.hrms.utils.CommonFunctions;
 

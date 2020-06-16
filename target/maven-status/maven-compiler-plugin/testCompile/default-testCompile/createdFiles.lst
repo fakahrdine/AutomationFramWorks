@@ -3,13 +3,14 @@ com\hrms\utils\ExecelUtility.class
 com\hrms\utils\ConfigsReader.class
 com\hrms\runner\RegressionRunner.class
 com\hrms\pages\AddEmployePageObjects.class
+com\hrms\runner\FailedRunner.class
 com\hrms\runner\SmokeRunner.class
 com\hrms\pages\LoginPageObjects.class
 com\hrms\steps\EmployeeSearchSteps.class
 com\hrms\testbase\BaseClass.class
 com\hrms\utils\CommonFunctions.class
 com\hrms\pages\EmployeeListPage.class
-com\hrms\pages\EmpPersonnaldetails.class
+com\hrms\steps\AddempPersonnalDetailsSteps.class
 com\hrms\testbase\PageInitilizer.class
 com\hrms\pages\LandingPageElement.class
 com\hrms\steps\AddEmployeeSteps.class

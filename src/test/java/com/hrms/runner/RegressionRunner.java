@@ -7,16 +7,16 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(features = "src//test//resources//features",
+@CucumberOptions(features = "src/test/resources/features",
 
-		glue = "com.hrms.steps",
+		glue = "com/hrms/steps",
 
-		dryRun = true, monochrome = true, tags = { "@temp" }
+		dryRun = false, monochrome = true
    
   ,plugin = {
 		"pretty",
-		 "html:target//cucumber-default-report",
-		  "json:target//cucumber.json"
+		 "html:target/cucumber-default-report",
+		  "json:target/cucumber.json"
 		  
   }
 

@@ -24,6 +24,8 @@ public class AddEmployeeSteps extends CommonFunctions {
 
 	@When("user enters employees first {string} and last {string}")
 	public void user_enters_employees_first_name_and_last_name(String fName, String lName) {
+		wait(3);
+		waitForVisibilty(addEmp.firstNText);
 		sendText(addEmp.firstNText, fName);
 		sendText(addEmp.lastNText, lName);
 	}

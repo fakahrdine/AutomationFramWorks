@@ -1,11 +1,8 @@
 package com.hrms.steps;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
