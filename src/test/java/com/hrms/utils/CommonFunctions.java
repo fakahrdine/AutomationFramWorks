@@ -45,13 +45,12 @@ public class CommonFunctions extends PageInitilizer {
 		String actualValue;
 		for (WebElement el : radioOrCheckBox) {
 			actualValue = el.getAttribute("value").trim();
-			if (el.isEnabled() && actualValue.equals(value))
-				;
+			if (el.isEnabled() && actualValue.equals(value)){
 			el.click();
 			break;
-
 		}
 
+	}
 	}
 
 	/**

@@ -2,6 +2,7 @@ package com.hrms.steps;
 
 import com.hrms.utils.CommonFunctions;
 import com.hrms.utils.ConfigsReader;
+import com.hrms.utils.GlobalVariables;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,13 +21,14 @@ public class EmployeeSearchSteps extends CommonFunctions {
 	@Given("user navigate to emoloyee list page")
 	public void user_navigate_to_emoloyee_list_page() {
 		click(addEmp.pimBtn);
-		click(empList.emplistBtn);
+		jsClick(empList.emplistBtn);
 
 	}
 
 	@When("user enters valid employee id {string}")
 	public void user_enters_valid_employee_id(String empId) {
 		sendText(empList.empId, empId);
+		GlobalVariables.empId = empId;
 
 	}
 
@@ -39,15 +41,12 @@ public class EmployeeSearchSteps extends CommonFunctions {
 	@Then("user see employee information is displayed")
 	public void user_see_employee_information_is_displayed() {
 		System.out.println("the emp name or id is displayed");
-		
-	
-		
 
 	}
 
 	@When("user enters valid employee name {string}")
 	public void user_enters_valid_employee_name_and_last_name(String empName) {
-		sendText(empList.empNameBox,empName );
+		sendText(empList.empNameBox, empName);
 
 	}
 

@@ -1,5 +1,10 @@
 package com.hrms.pages;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -58,6 +63,26 @@ public class EmployeeListPage {
 	@FindBy(xpath = "//table[@id='resultTable']/thead/tr")
 
 	public WebElement tableHeaderRow;
+
+	@FindBy(xpath = "//table[@id='resultTable']")
+	public WebElement tableIspresent;
+
+	@FindBy(xpath = "//table[@id='resultTable']/tbody/tr/td[3]")
+
+	public List<WebElement> firstNFromTable;
+
+	public List<Map<String, String>> getFirstNameFromTable() {
+		List<Map<String, String>> uiFirstName = new ArrayList<Map<String, String>>();
+		for (WebElement rows : firstNFromTable) {
+			Map<String, String> storUiNams = new LinkedHashMap<String, String>();
+			String tablefname = rows.getText();
+			storUiNams.put("emp_firstname", tablefname);
+			uiFirstName.add(storUiNams);
+
+		}
+		return uiFirstName;
+
+	}
 
 	public EmployeeListPage() {
 

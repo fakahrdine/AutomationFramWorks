@@ -16,8 +16,10 @@ public class BaseClass {
 
 	public static WebDriver setUP() {
 		ConfigsReader.readPropertieas(Constants.PROPERTIES_FILE_PATH);
+	String headless=	ConfigsReader.getProperty("headlessBrowser");
 
 		switch (ConfigsReader.getProperty("browser").toLowerCase()) {
+		
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
