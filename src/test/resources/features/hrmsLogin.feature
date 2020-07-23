@@ -1,6 +1,6 @@
 Feature: hrms login
 
-  @smoke123
+  @smoke
   Scenario: valid admin login
     When user enter valid admin "Admin" and "Hum@nhrm123"
     And user click on login button

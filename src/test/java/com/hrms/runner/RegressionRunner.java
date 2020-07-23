@@ -11,7 +11,8 @@ import io.cucumber.junit.CucumberOptions;
 
 		glue = "com/hrms/steps",
 
-		dryRun = false, monochrome = true
+		dryRun = false, monochrome = true,
+		tags = "@Regression"
    
   ,plugin = {
 		"pretty",
