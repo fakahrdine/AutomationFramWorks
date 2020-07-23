@@ -1,5 +1,6 @@
 Feature: Name Validations Ui Against Db
 
+  @Regression
   Scenario: First Name Validations agians Db
     When user enter valid admin "Admin" and "Hum@nhrm123"
     And user click on login button
