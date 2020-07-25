@@ -1,4 +1,4 @@
-#Author: your.email@your.domain.com
+
 Feature: view personnal details feature
 
 @Regression

@@ -3,6 +3,7 @@ package com.hrms.API.steps.practice;
 import io.cucumber.java.en.Given;
 
 import io.restassured.RestAssured;
+import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -24,8 +25,10 @@ public class HardCodedExamples {
 
 	static String baseURI = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api";
 
-	static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTUxNzAxMjUsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTU5NTIxMzMyNSwidXNlcklkIjoiNzE4In0.ozVsmhqLhGfqiRtj9lo38QXiCTA13UMZOmHex4SszH0";
+	static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTU2MzM4NjAsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTU5NTY3NzA2MCwidXNlcklkIjoiNjcyIn0.1oeskVS4-P08SArXJItCg8yQw0v_w6z_T9pbUEYFaFg";
 	public static String empId;
+	public static String contentType = "application/json";
+	private int UpdateEmpStatusCode = 201;
 
 	/**
 	 * Rest Assured given - prepare your request when - you are making the call to
@@ -163,26 +166,57 @@ public class HardCodedExamples {
 
 	}
 
+	@Test
 	public void dPutUpdateCreatedEmployee() {
-		
-		RequestSpecification updateCreatedEmpRequest = given().header("Content-type","application/json").header("Authorization",token).body("{\r\n" + 
-				"  \"employee_id\": \""+empId+"\",\r\n" + 
-				"  \"emp_firstname\": \"Khalid\",\r\n" + 
-				"  \"emp_lastname\": \"Sonni\",\r\n" + 
-				"  \"emp_middle_name\": \"Lol\",\r\n" + 
-				"  \"emp_gender\": \"F\",\r\n" + 
-				"  \"emp_birthday\": \"1999-06-11\",\r\n" + 
-				"  \"emp_status\": \"Self-Employee\",\r\n" + 
-				"  \"emp_job_title\": \"Database Administrator\"\r\n" + 
-				"}");
-		
+
+		RequestSpecification updateCreatedEmpRequest = given().header("Content-type", "application/json")
+				.header("Authorization", token)
+				.body("{\r\n" + "  \"employee_id\": \"" + empId + "\",\r\n" + "  \"emp_firstname\": \"Khalid\",\r\n"
+						+ "  \"emp_lastname\": \"Sonni\",\r\n" + "  \"emp_middle_name\": \"Lol\",\r\n"
+						+ "  \"emp_gender\": \"F\",\r\n" + "  \"emp_birthday\": \"1999-06-11\",\r\n"
+						+ "  \"emp_status\": \"Self-Employee\",\r\n"
+						+ "  \"emp_job_title\": \"Database Administrator\"\r\n" + "}")
+				.log().all();
+
 		Response updateCreatedEmployeeResponse = updateCreatedEmpRequest.when().put("/updateEmployee.php");
-		
+
 		updateCreatedEmployeeResponse.prettyPrint();
-		
-		
-		
-		
+
+		updateCreatedEmployeeResponse.then().assertThat().contentType(contentType);
+		updateCreatedEmployeeResponse.then().assertThat().statusCode(UpdateEmpStatusCode);
+		String CType = updateCreatedEmployeeResponse.getContentType();
+
+		System.out.println(CType);
+		Headers resonseHeader = updateCreatedEmployeeResponse.getHeaders();
+		String headerName = resonseHeader.getValue("Content-Type");
+		System.out.println(headerName);
+
+		boolean hasHeader = resonseHeader.hasHeaderWithName("Authorization");
+
+		System.out.println(hasHeader);
+
+		String statusLine = updateCreatedEmployeeResponse.getStatusLine();
+		System.out.println(statusLine);
+
+		// updateCreatedEmployeeResponse.jsonPath().
+
+		// resonseHeader.getValues()
+
+		// first way to to get values from the response body using JSonPath class
+		String empIdo = updateCreatedEmployeeResponse.body().jsonPath().getString("employee[0].employee_id");
+		String UpdateResponseBody = updateCreatedEmployeeResponse.prettyPrint();
+
+		// Second way to get values from a json object using an object of jsonpath type
+		// class to retrives values by specifying keys
+		JsonPath jsp = new JsonPath(UpdateResponseBody);
+
+		String empfirstn = jsp.getString("employee[0].emp_firstname");
+		System.out.println(empfirstn);
+
+		boolean empiAreEquals = empIdo.contentEquals(empId);
+
+		Assert.assertTrue(empiAreEquals);
+
 	}
 
 }
