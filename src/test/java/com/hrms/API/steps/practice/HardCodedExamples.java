@@ -1,20 +1,18 @@
 package com.hrms.API.steps.practice;
 
-import io.cucumber.java.en.Given;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
+import org.junit.Assert;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import static org.hamcrest.Matchers.*;
-
-import static io.restassured.RestAssured.*;
-import org.junit.runners.MethodSorters;
-
-import org.junit.Assert;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
 
 /*
  * this @FixMethodOrder we will execute @Test annotation in ascending order
@@ -216,7 +214,59 @@ public class HardCodedExamples {
 		boolean empiAreEquals = empIdo.contentEquals(empId);
 
 		Assert.assertTrue(empiAreEquals);
+		
+		updateCreatedEmployeeResponse.then().body("Message",equalTo("Entry updated"));
+        
+		String empId=updateCreatedEmployeeResponse.body().jsonPath().getString("Employee[0].employee_id");
+		//asserting that response body employee ID matches globally stors employee Id
+		Assert.assertTrue(HardCodedExamples.empId.contentEquals(empId));
+		
+		
+		
+		
+		
+		
+		
 
 	}
+	
+	@Test
+	
+	public void eGetUpdatedEmployee() {
+		
+		//preparing request to get updated employee
+		
+		RequestSpecification getUpdateEmpRequest = given().header("Content-Type","application/json").header("Authorization",token).queryParam("employee_id", empId);
+		
+		
+		//Assertin expected fname
+		Response getUpdateEmpResponse = getUpdateEmpRequest.when().get("/getOneEmployee.php");
+		
+		getUpdateEmpResponse.then().body("employee[0].employee_id",equalTo(empId));
+		getUpdateEmpResponse.prettyPrint();
+		
+			
+	}
+	@Test
+	
+	public void fPatchpartiallyUpdateEmployee() {
+		RequestSpecification partialyUpdateRequest = given().header("Content-Type","application/json").header("Authorization",token).queryParam("Employee_id", empId).body("{\"emp_firstname\": \"Ahmad\",\r\n" + 
+				"  \"emp_lastname\": \"Salamo\"}");
+		
+		Response partialyUpdateEmpResponse = partialyUpdateRequest.get("/updatePartialEmplyeesDetails.php");
+		partialyUpdateEmpResponse.prettyPrint();
+		
+		
+	}
+	
+	//@Test
+//	
+//	public void getDeleteEmployee() {
+//		
+//		
+//		g
+//	}
+//	
+	
 
 }

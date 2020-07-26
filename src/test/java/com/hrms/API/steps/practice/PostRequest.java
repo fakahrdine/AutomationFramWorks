@@ -1,20 +1,18 @@
 package com.hrms.API.steps.practice;
 
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.equalTo;
+
 import org.junit.Test;
-import static io.restassured.RestAssured.*;
 
 import io.restassured.RestAssured;
-import io.restassured.http.Headers;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import static org.hamcrest.Matchers.*;
 
 public class PostRequest {
 
 	public static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTU2MzM4NjAsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTU5NTY3NzA2MCwidXNlcklkIjoiNjcyIn0.1oeskVS4-P08SArXJItCg8yQw0v_w6z_T9pbUEYFaFg";
 	String BaseUrl = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api";
-	// String Endpoin = RestAssured.basePath = "/createEmployee.php";
+	 String Endpoin = RestAssured.basePath = "/createEmployee.php";
 	public static String fname = "Anwar";
 
 	@Test

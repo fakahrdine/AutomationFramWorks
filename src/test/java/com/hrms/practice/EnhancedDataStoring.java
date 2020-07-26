@@ -13,7 +13,6 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import com.hrms.testbase.BaseClass;
 import com.hrms.utils.ConfigsReader;
 import com.hrms.utils.Constants;
 
