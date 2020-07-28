@@ -2,6 +2,8 @@ package com.hrms.API.steps.practice;
 
 import static io.restassured.RestAssured.given;
 
+import com.hrmsAPI.utils.ApiConstants;
+
 import io.cucumber.java.en.Given;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -17,11 +19,11 @@ public class TokenGenerationSteps {
 		RequestSpecification generateTokenRequest = given().header("Content-Type", "application/json").body(
 				"{\r\n" + "  \"email\": \"lmadir1999@gmail.com\",\r\n" + "  \"password\": \"59Mohamed@\"\r\n" + "}");
 
-		Response generateTokenResponse = generateTokenRequest.when().post("/generateToken.php");
-		generateTokenResponse.prettyPrint();
+		Response generateTokenResponse = generateTokenRequest.when().post(ApiConstants.GENERATE_TOKEN_ENDPOINT);
+		//generateTokenResponse.prettyPrint();
 
 		token ="Bearer "+generateTokenResponse.body().jsonPath().getString("token");
-		System.out.println(token);
+		//System.out.println(token);
 
 	}
 

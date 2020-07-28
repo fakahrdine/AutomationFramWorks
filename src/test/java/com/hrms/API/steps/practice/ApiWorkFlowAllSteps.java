@@ -1,25 +1,24 @@
 package com.hrms.API.steps.practice;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.junit.Assert;
 
 import com.hrmsAPI.utils.ApiConstants;
 import com.hrmsAPI.utils.PayloadConstants;
-import com.oracle.jrockit.jfr.ContentType;
 
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
-import io.restassured.http.Headers;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -88,23 +87,26 @@ public class ApiWorkFlowAllSteps {
 
 	}
 
-//	@Then("the retrieved data matches the data used to create an employee")
-//	public void the_retrieved_data_matches_the_data_used_to_create_an_employee(DataTable dataTable) {
-//		
-//		List<Map<String, String>> expectedData = dataTable.asMaps();	
-//		List<Map<String, String>> actualData =  response.jsonPath().get("")	;	
-//		int index = 0;		
-//		for(Map<String, String> map : expectedData) {			
-//			Set<String> keys = map.keySet();		
-//			for(String key : keys) {
-//				String expectedValue = map.get(key);
-//				String actualValue = actualData.get(index).get(key);
-//				Assert.assertEquals(expectedValue, actualValue);
-//			}			
-//			index ++;			
-//		}	
-//		String empID = response.body().jsonPath().getString(EmployeeId);
-//		Assert.assertTrue(empID.contentEquals(EmployeeId));
-//	}
+	@Then("the retrieved data at {string} matches the data used to create an employee with {string}")
+	public void the_retrieved_data_at_matches_the_data_used_to_create_an_employee(String employeeObj,String employeeId,DataTable dataTable) {
+		List<Map<String, String>> responseBody = response.body().jsonPath().get(employeeObj);
 
+		List<Map<String, String>> expectedbody = dataTable.asMaps(String.class, String.class);
+		int index = 0;
+		for (Map<String, String> responsemap : responseBody) {
+			Set<String> rsSet = responsemap.keySet();
+			for (String keys : rsSet) {
+				String actualValue = responsemap.get(keys);
+				String expectedValue = expectedbody.get(index).get(keys);
+				Assert.assertEquals("The Values are not equals", expectedValue, actualValue);
+
+			}
+			index++;
+
+			String empId = response.body().jsonPath().getString(employeeId);
+
+			Assert.assertTrue(empId.contentEquals(EmployeeId));
+		}
+
+	}
 }

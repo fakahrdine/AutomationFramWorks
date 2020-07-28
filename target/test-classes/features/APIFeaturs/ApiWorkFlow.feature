@@ -6,7 +6,7 @@ Feature: Syntax HRMS API End to END WorkFlow
   Background: 
     Given a JWT is generated
 
-  @Workflow
+  @Regression
   Scenario: Create an employee
     Given a request is prepared to create an employee
     When a Post call is made to create an employee
@@ -19,4 +19,6 @@ Feature: Syntax HRMS API End to END WorkFlow
     When a Get call is made to retrieve the created employee
     Then the status code for retrieving the created employee is 200
     And the retrieved employee Id at "employee[0].employee_id" matches the globally stored employee Id
-    And the retrieved data matches the data used to create an employee
+    And the retrieved data at "employee" matches the data used to create an employee with "employee[0].employee_id"
+      | emp_firstname | emp_lastname | emp_middle_name | emp_gender | emp_birthday | emp_status | emp_job_title |
+      | Arjon         | Karawan      | kk              | M          | 1999-01-11   | Worker     | Developer     |
