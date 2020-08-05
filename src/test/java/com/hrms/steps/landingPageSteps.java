@@ -6,11 +6,11 @@ import java.util.List;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
-import com.hrms.utils.CommonFunctions;
+import com.hrms.utils.CommonMethods;
 
 import io.cucumber.java.en.Then;
 
-public class landingPageSteps extends CommonFunctions {
+public class landingPageSteps extends CommonMethods {
 
 	@Then("user should see the diffrent main menu taps")
 	public void user_should_see_the_diffrent_main_menu_taps(io.cucumber.datatable.DataTable dataTable) {

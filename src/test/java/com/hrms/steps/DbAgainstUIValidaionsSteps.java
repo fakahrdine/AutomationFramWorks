@@ -6,14 +6,14 @@ import java.util.Map;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 
-import com.hrms.utils.CommonFunctions;
+import com.hrms.utils.CommonMethods;
 import com.hrms.utils.DbUtils;
 import com.hrms.utils.GlobalVariables;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class DbAgainstUIValidaionsSteps extends CommonFunctions {
+public class DbAgainstUIValidaionsSteps extends CommonMethods {
 
 	public static List<Map<String, String>> dbFirstNamelist;
 

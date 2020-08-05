@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 
 import com.hrms.utils.ConfigsReader;
 import com.hrms.utils.Constants;
@@ -34,6 +36,25 @@ public class BaseClass {
 			}
 
 			break;
+			
+			
+		case "ie":
+			WebDriverManager.iedriver().setup();
+
+			if (headless.equals("true")) {
+				
+			//	ChromeOptions cOptions = new ChromeOptions();
+				InternetExplorerOptions ieOption = new InternetExplorerOptions();
+			//
+				driver = new InternetExplorerDriver(ieOption);
+			} else {
+				driver = new InternetExplorerDriver();
+			}
+
+			break;
+			
+			
+			
 
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();

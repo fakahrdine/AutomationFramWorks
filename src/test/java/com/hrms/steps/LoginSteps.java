@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.junit.Assert;
 
-import com.hrms.utils.CommonFunctions;
+import com.hrms.utils.CommonMethods;
 import com.hrms.utils.Constants;
 import com.hrms.utils.ExecelUtility;
 
@@ -13,7 +13,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.assertj.core.api.SoftAssertions;
 
-public class LoginSteps extends CommonFunctions {
+public class LoginSteps extends CommonMethods {
 
 	@When("user enter valid admin {string} and {string}")
 	public void user_enter_valid_admin_username_and_password(String adUserN, String adPsw) {

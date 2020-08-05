@@ -1,6 +1,6 @@
 package com.hrms.steps;
 
-import com.hrms.utils.CommonFunctions;
+import com.hrms.utils.CommonMethods;
 import com.hrms.utils.ConfigsReader;
 import com.hrms.utils.GlobalVariables;
 
@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class EmployeeSearchSteps extends CommonFunctions {
+public class EmployeeSearchSteps extends CommonMethods {
 
 	@Given("user is logged in with valid admin credentails")
 	public void user_is_logged_in_with_valid_admin_credentails() {

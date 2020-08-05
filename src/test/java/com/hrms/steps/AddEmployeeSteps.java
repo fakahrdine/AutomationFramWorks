@@ -2,14 +2,14 @@ package com.hrms.steps;
 
 import org.junit.Assert;
 
-import com.hrms.utils.CommonFunctions;
+import com.hrms.utils.CommonMethods;
 import com.hrms.utils.ConfigsReader;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class AddEmployeeSteps extends CommonFunctions {
+public class AddEmployeeSteps extends CommonMethods {
 	@Given("user logged in into HRMS")
 	public void user_logged_in_into_HRMS() {
 		login.loginTHrms(ConfigsReader.getProperty("username"), ConfigsReader.getProperty("password"));

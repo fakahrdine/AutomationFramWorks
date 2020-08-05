@@ -3,13 +3,13 @@ package com.hrms.steps;
 import java.util.List;
 import java.util.Map;
 
-import com.hrms.utils.CommonFunctions;
+import com.hrms.utils.CommonMethods;
 import com.hrms.utils.Constants;
 import com.hrms.utils.ExecelUtility;
 
 import io.cucumber.java.en.When;
 
-public class AddempPersonnalDetailsSteps extends CommonFunctions {
+public class AddempPersonnalDetailsSteps extends CommonMethods {
 
 	@When("user add personnal employee details from {string} execl sheet")
 	public void user_add_personnal_employee_details_from_execl_sheet(String exelPath) {

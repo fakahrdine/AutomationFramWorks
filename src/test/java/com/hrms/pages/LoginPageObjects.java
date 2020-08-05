@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.hrms.testbase.BaseClass;
-import com.hrms.utils.CommonFunctions;
+import com.hrms.utils.CommonMethods;
 
-public class LoginPageObjects extends CommonFunctions {
+public class LoginPageObjects extends CommonMethods {
 
 	@FindBy(id = "txtUsername")
 	public WebElement userName;

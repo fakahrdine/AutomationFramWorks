@@ -1,7 +1,7 @@
 package com.hrms.steps;
 
 import com.hrms.testbase.BaseClass;
-import com.hrms.utils.CommonFunctions;
+import com.hrms.utils.CommonMethods;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -24,10 +24,10 @@ public class Hooks {
 		byte[] pic;
 		if (scenario.isFailed()) {
 
-			pic = CommonFunctions.takeScreenShot("failed//" + scenario.getName());
+			pic = CommonMethods.takeScreenShot("failed//" + scenario.getName());
 
 		} else {
-			pic = CommonFunctions.takeScreenShot("passed//" + scenario.getName());
+			pic = CommonMethods.takeScreenShot("passed//" + scenario.getName());
 
 		}
 		scenario.attach(pic, "img//png", scenario.getName());
