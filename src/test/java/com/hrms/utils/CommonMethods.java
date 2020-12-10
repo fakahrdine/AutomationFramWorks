@@ -45,12 +45,12 @@ public class CommonMethods extends PageInitilizer {
 		String actualValue;
 		for (WebElement el : radioOrCheckBox) {
 			actualValue = el.getAttribute("value").trim();
-			if (el.isEnabled() && actualValue.equals(value)){
-			el.click();
-			break;
-		}
+			if (el.isEnabled() && actualValue.equals(value)) {
+				el.click();
+				break;
+			}
 
-	}
+		}
 	}
 
 	/**
@@ -400,6 +400,17 @@ public class CommonMethods extends PageInitilizer {
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
 		return sdf.format(date.getTime());
+	}
+
+	/**
+	 * this method will switch to a specific window handel
+	 * 
+	 * @param windowTitle
+	 */
+	public static void switchTowindow(String windowTitle) {
+
+		driver.switchTo().window(windowTitle);
+
 	}
 
 }

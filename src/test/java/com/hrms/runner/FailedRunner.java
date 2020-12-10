@@ -8,7 +8,8 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
-		features = "@target/failed.text",
+		features = "@target"
+				+ "/failed.text",
 		
 		glue = "com/hrms/steps", 
 		

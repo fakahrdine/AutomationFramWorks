@@ -1,0 +1,7 @@
+2020-10-14 13:36:16,128 DEBUG [Finalizer] PoolingHttpClientConnectionManager:400 - Connection manager shut down
+2020-10-14 13:36:16,129 DEBUG [Finalizer] PoolingHttpClientConnectionManager:394 - Connection manager is shutting down
+2020-10-14 13:36:16,129 DEBUG [Finalizer] PoolingHttpClientConnectionManager:400 - Connection manager shut down
+2020-10-14 13:36:25,518 DEBUG [Finalizer] PoolingHttpClientConnectionManager:394 - Connection manager is shutting down
+2020-10-14 13:36:25,518 DEBUG [Finalizer] PoolingHttpClientConnectionManager:400 - Connection manager shut down
+2020-10-14 13:36:25,520 DEBUG [Finalizer] PoolingHttpClientConnectionManager:394 - Connection manager is shutting down
+2020-10-14 13:36:25,521 DEBUG [Finalizer] PoolingHttpClientConnectionManager:400 - Connection manager shut down

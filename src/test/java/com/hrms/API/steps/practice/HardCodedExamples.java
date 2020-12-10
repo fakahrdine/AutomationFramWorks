@@ -23,7 +23,7 @@ public class HardCodedExamples {
 
 	static String baseURI = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api";
 
-	static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTU2MzM4NjAsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTU5NTY3NzA2MCwidXNlcklkIjoiNjcyIn0.1oeskVS4-P08SArXJItCg8yQw0v_w6z_T9pbUEYFaFg";
+	static String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTcxMDk4MTEsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTU5NzE1MzAxMSwidXNlcklkIjoiNjcyIn0.sYvtM7-g1IkLDdVxr_Gnyka93d4eJv0Uk2IE2TF3SU8";
 	public static String empId;
 	public static String contentType = "application/json";
 	private int UpdateEmpStatusCode = 201;
@@ -146,21 +146,21 @@ public class HardCodedExamples {
 		System.out.println(sizeOfList);
 		// print all the employees ids
 
-		for (int i = 0; i < sizeOfList; i++) {
-
-			String aids = js.getString("Employees[" + i + "].employee_id");
-
-			// System.out.println(aids);
-			if (aids.contentEquals(empId)) {
-
-				System.out.println("employee id " + empId + " is present is the body");
-				String empfname = js.getString("Employees[" + i + "].emp_firstname");
-				System.out.println(empfname);
-				break;
-
-			}
-
-		}
+//		for (int i = 0; i < sizeOfList; i++) {
+//
+//			String aids = js.getString("Employees[" + i + "].employee_id");
+//
+//			// System.out.println(aids);
+//			if (aids.contentEquals(empId)) {
+//
+//				System.out.println("employee id " + empId + " is present is the body");
+//				String empfname = js.getString("Employees[" + i + "].emp_firstname");
+//				System.out.println(empfname);
+//				break;
+//
+//			}
+//
+//		}
 
 	}
 
@@ -193,6 +193,8 @@ public class HardCodedExamples {
 
 		System.out.println(hasHeader);
 
+		System.out.println("?????????????????????????????????");
+
 		String statusLine = updateCreatedEmployeeResponse.getStatusLine();
 		System.out.println(statusLine);
 
@@ -214,52 +216,49 @@ public class HardCodedExamples {
 		boolean empiAreEquals = empIdo.contentEquals(empId);
 
 		Assert.assertTrue(empiAreEquals);
-		
-		updateCreatedEmployeeResponse.then().body("Message",equalTo("Entry updated"));
-        
-		String empId=updateCreatedEmployeeResponse.body().jsonPath().getString("Employee[0].employee_id");
-		//asserting that response body employee ID matches globally stors employee Id
+
+		updateCreatedEmployeeResponse.then().body("Message", equalTo("Entry updated"));
+
+		String empId = updateCreatedEmployeeResponse.body().jsonPath().getString("Employee[0].employee_id");
+		// asserting that response body employee ID matches globally stors employee Id
 		Assert.assertTrue(HardCodedExamples.empId.contentEquals(empId));
-		
-		
-		
-		
-		
-		
-		
 
 	}
-	
+
 	@Test
-	
+
 	public void eGetUpdatedEmployee() {
-		
-		//preparing request to get updated employee
-		
-		RequestSpecification getUpdateEmpRequest = given().header("Content-Type","application/json").header("Authorization",token).queryParam("employee_id", empId);
-		
-		
-		//Assertin expected fname
+
+		// preparing request to get updated employee
+
+		RequestSpecification getUpdateEmpRequest = given().header("Content-Type", "application/json")
+				.header("Authorization", token).queryParam("employee_id", empId);
+
+		// Assertin expected fname
 		Response getUpdateEmpResponse = getUpdateEmpRequest.when().get("/getOneEmployee.php");
-		
-		getUpdateEmpResponse.then().body("employee[0].employee_id",equalTo(empId));
+
+		getUpdateEmpResponse.then().body("employee[0].employee_id", equalTo(empId));
 		getUpdateEmpResponse.prettyPrint();
-		
-			
+
 	}
+
 	@Test
-	
+
 	public void fPatchpartiallyUpdateEmployee() {
-		RequestSpecification partialyUpdateRequest = given().header("Content-Type","application/json").header("Authorization",token).queryParam("Employee_id", empId).body("{\"emp_firstname\": \"Ahmad\",\r\n" + 
-				"  \"emp_lastname\": \"Salamo\"}");
-		
-		Response partialyUpdateEmpResponse = partialyUpdateRequest.get("/updatePartialEmplyeesDetails.php");
+		RequestSpecification partialyUpdateRequest = given().header("Content-Type", "application/json")
+				.header("Authorization", token).queryParam("employee_id", empId)
+				.body("{\"emp_firstname\": \"Ahmad\",\r\n" + "  \"emp_lastname\": \"Salamo\"}");
+
+		Response partialyUpdateEmpResponse = partialyUpdateRequest.patch("/updatePartialEmplyeesDetails.php");
 		partialyUpdateEmpResponse.prettyPrint();
-		
-		
+
+		String stline = partialyUpdateEmpResponse.getStatusLine();
+
+		System.out.println(stline);
+
 	}
-	
-	//@Test
+
+	// @Test
 //	
 //	public void getDeleteEmployee() {
 //		
@@ -267,6 +266,5 @@ public class HardCodedExamples {
 //		g
 //	}
 //	
-	
 
 }
